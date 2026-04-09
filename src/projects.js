@@ -1,0 +1,51 @@
+export const projects = [
+  {
+    id: "drum",
+    name: "Drum Kit",
+    path: "/drum",
+    description: "Play drum sounds with keyboard keys and button clicks.",
+    immersive: true,
+  },
+  {
+    id: "mouse-position",
+    name: "Mouse Position",
+    path: "/mouse-position",
+    description: "Track the mouse cursor position in real time.",
+    immersive: false,
+  },
+  {
+    id: "window-resize",
+    name: "Window Resize",
+    path: "/window-resize",
+    description: "Watch the current browser width and height update live.",
+    immersive: false,
+  },
+  {
+    id: "toggle-theme",
+    name: "Toggle Theme",
+    path: "/toggle-theme",
+    description: "Switch instantly between light and dark mode.",
+    immersive: true,
+  },
+  {
+    id: "custom-hook",
+    name: "Custom Hook",
+    path: "/custom-hook",
+    description: "Fetch posts and comments with the reusable hook project.",
+    immersive: false,
+  },
+  {
+    id: "online-offline",
+    name: "Online Offline",
+    path: "/online-offline",
+    description: "Show the current internet connectivity status.",
+    immersive: false,
+  },
+  {
+    id: "form-useref",
+    name: "Form UseRef",
+    path: "/form-useref",
+    description: "Submit and manage table rows with refs and local state.",
+    immersive: false,
+  },
+];
