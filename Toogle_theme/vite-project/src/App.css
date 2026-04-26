@@ -1,6 +1,6 @@
 .app {
-  height: 100vh;
-  width: 100vw;
+  min-height: 420px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,7 +20,7 @@
   color: white;
 }
 
-button {
+.app button {
   padding: 10px 20px;
   margin-top: 20px;
   cursor: pointer;

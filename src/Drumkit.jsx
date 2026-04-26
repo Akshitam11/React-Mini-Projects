@@ -10,11 +10,9 @@ import crash from "./assets/sounds/crash.mp3";
 import kick from "./assets/sounds/kick-bass.mp3";
 
 function DrumKit() {
+  const [pressed, setPressed] = useState("");
 
-  let [pressed, setPressed] = useState("");
-
-  let playSound = (key) => {
-
+  const playSound = (key) => {
     let sound;
 
     switch (key) {
@@ -44,7 +42,6 @@ function DrumKit() {
     }
 
     sound.play();
-
     setPressed(key);
 
     setTimeout(() => {
@@ -53,33 +50,63 @@ function DrumKit() {
   };
 
   useEffect(() => {
-
-    let handleKeyPress = (event) => {
+    const handleKeyPress = (event) => {
       playSound(event.key);
     };
 
     document.addEventListener("keypress", handleKeyPress);
-
-
-
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
   }, []);
 
-  const keys = ["w", "a", "s", "d", "j", "k", "l"];
-
   return (
-    <div className="container">
-      <h1>The Drum Kit</h1>
+    <div className="drumkit-project">
+      <h1 className="drumkit-title">The Drum Kit</h1>
 
-      <div className="drum">
-
-        <button className={`key w ${pressed == "w" ? "pressed" : ""}`} onClick={() => playSound("w")}> w </button>
-        <button className={`key a ${pressed == "a" ? "pressed" : ""}`} onClick={() => playSound("a")}> a </button>
-        <button className={`key s ${pressed == "s" ? "pressed" : ""}`} onClick={() => playSound("s")}> s </button>
-        <button className={`key d ${pressed == "d" ? "pressed" : ""}`} onClick={() => playSound("d")}> d </button>
-        <button className={`key j ${pressed == "j" ? "pressed" : ""}`} onClick={() => playSound("j")}> j </button>
-        <button className={`key k ${pressed == "k" ? "pressed" : ""}`} onClick={() => playSound("k")}> k </button>
-        <button className={`key l ${pressed == "l" ? "pressed" : ""}`} onClick={() => playSound("l")}> l </button>
-        
+      <div className="drumkit-keys">
+        <button
+          className={`drumkit-key drumkit-w ${pressed === "w" ? "drumkit-pressed" : ""}`}
+          onClick={() => playSound("w")}
+        >
+          w
+        </button>
+        <button
+          className={`drumkit-key drumkit-a ${pressed === "a" ? "drumkit-pressed" : ""}`}
+          onClick={() => playSound("a")}
+        >
+          a
+        </button>
+        <button
+          className={`drumkit-key drumkit-s ${pressed === "s" ? "drumkit-pressed" : ""}`}
+          onClick={() => playSound("s")}
+        >
+          s
+        </button>
+        <button
+          className={`drumkit-key drumkit-d ${pressed === "d" ? "drumkit-pressed" : ""}`}
+          onClick={() => playSound("d")}
+        >
+          d
+        </button>
+        <button
+          className={`drumkit-key drumkit-j ${pressed === "j" ? "drumkit-pressed" : ""}`}
+          onClick={() => playSound("j")}
+        >
+          j
+        </button>
+        <button
+          className={`drumkit-key drumkit-k ${pressed === "k" ? "drumkit-pressed" : ""}`}
+          onClick={() => playSound("k")}
+        >
+          k
+        </button>
+        <button
+          className={`drumkit-key drumkit-l ${pressed === "l" ? "drumkit-pressed" : ""}`}
+          onClick={() => playSound("l")}
+        >
+          l
+        </button>
       </div>
     </div>
   );

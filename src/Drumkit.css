@@ -1,47 +1,78 @@
-.container{
-  text-align:center;
-  background-color:#a06060;
-  height: 100vh;
-
+.drumkit-project {
+  min-height: calc(100vh - 78px);
+  padding: 64px 24px;
+  text-align: center;
+  background-color: #a06060;
 }
 
-h1{
-  font-size:5rem;
-  color:#050505;
-  text-shadow:3px 0 #DA0463;
-  margin-top: 0px;
-  padding-top: 100px;
+.drumkit-title {
+  margin: 0 0 48px;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  color: #050505;
+  text-shadow: 3px 0 #da0463;
 }
 
-/* .drum{
-  margin-top:50px;
-} */
-
-.key{
-  border:10px solid #404B69;
-  font-size:5rem;
-  border-radius:15px;
-  width:150px;
-  height:150px;
-  margin:10px;
-  background:white;
-  cursor:pointer;
+.drumkit-keys {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.pressed{
-  box-shadow:0 3px 4px 0 #DBEDF3;
-  opacity:0.5;
+.drumkit-key {
+  border: 10px solid #404b69;
+  border-radius: 15px;
+  width: 150px;
+  height: 150px;
+  font-size: 5rem;
+  margin: 0;
+  cursor: pointer;
+  background-color: white;
+  background-size: cover;
+  background-position: center;
 }
 
-.w{ background-image:url("./assets/images/tom1.png"); }
-.a{ background-image:url("./assets/images/tom2.png"); }
-.s{ background-image:url("./assets/images/tom3.png"); }
-.d{ background-image:url("./assets/images/tom4.png"); }
-.j{ background-image:url("./assets/images/snare.png"); }
-.k{ background-image:url("./assets/images/crash.png"); }
-.l{ background-image:url("./assets/images/kick.png"); }
+.drumkit-pressed {
+  box-shadow: 0 3px 4px 0 #dbedf3;
+  opacity: 0.5;
+}
 
-.key{
-  background-size:cover;
-  background-position:center;
+.drumkit-w {
+  background-image: url("./assets/images/tom1.png");
+}
+
+.drumkit-a {
+  background-image: url("./assets/images/tom2.png");
+}
+
+.drumkit-s {
+  background-image: url("./assets/images/tom3.png");
+}
+
+.drumkit-d {
+  background-image: url("./assets/images/tom4.png");
+}
+
+.drumkit-j {
+  background-image: url("./assets/images/snare.png");
+}
+
+.drumkit-k {
+  background-image: url("./assets/images/crash.png");
+}
+
+.drumkit-l {
+  background-image: url("./assets/images/kick.png");
+}
+
+@media (max-width: 720px) {
+  .drumkit-project {
+    padding: 48px 16px;
+  }
+
+  .drumkit-key {
+    width: 120px;
+    height: 120px;
+    font-size: 4rem;
+  }
 }
